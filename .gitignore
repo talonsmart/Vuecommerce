@@ -1,4 +1,5 @@
 .DS_Store
+# so you don't commit your entire environment
 node_modules
 /dist
 

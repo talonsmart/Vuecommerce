@@ -1,9 +1,7 @@
 // Get dependencies
-const express = require("express");
 const bodyParser = require("body-parser");
+const express = require("express");
 const history = require("connect-history-api-fallback");
-// Get our API routes
-// eslint-disable-next-line no-unused-vars
 const mongodb = require("./server/mongo/config");
 
 const api = require("./server/routes/api");
@@ -22,7 +20,7 @@ app.use(
 );
 
 // Create link to Angular build directory
-var distDir = __dirname + "/dist";
+let distDir = __dirname + "/dist";
 app.use(express.static(distDir));
 
 /* Access Control Allow Origin */
@@ -54,7 +52,7 @@ app.use(history({ index: "/index.html" }));
 app.use("/api", [api, productApi, authApi, ShippingDetailApi]);
 
 // Initialize the app.
-var server = app.listen(process.env.PORT || 8080, function() {
-  var port = server.address().port;
+let server = app.listen(process.env.PORT || 8080, function() {
+  let port = server.address().port;
   console.log("App now running on port", port);
 });
