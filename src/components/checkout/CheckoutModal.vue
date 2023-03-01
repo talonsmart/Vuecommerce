@@ -19,7 +19,15 @@ export default {
       showModal: false,
     };
   },
-  methods: {},
+  methods: {
+    isCheckoutGroup() {
+        if (this.showModal === true) {
+            return 0
+        }
+
+        return 1
+    }
+  },
 };
 </script>
 

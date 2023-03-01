@@ -116,17 +116,17 @@
 
 <script>
 import { mapState, mapMutations } from "vuex";
-import {
-  isLoggedIn,
-  getLoggedInUser,
-} from "./components/shared/service/authService";
+import { isLoggedIn, getLoggedInUser } from "./components/shared/service/authService";
+
 export default {
   data() {
     return {
       cartValue: 0,
     };
   },
+
   computed: mapState(["cartProducts", "loggedUser"]),
+
   methods: {
     /* Initially loading the cart products from local storage */
 
@@ -151,14 +151,10 @@ export default {
     },
   },
   created() {
-    this.getLocalProducts();
-
     const loggedUser = getLoggedInUser();
 
+    this.getLocalProducts();
     this.ADD_LOGGED_USER(loggedUser);
-
-    console.log(process.env.NODE_ENV);
-    console.log(process.env.VUE_APP_BASE_URL);
   },
 };
 </script>

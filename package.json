@@ -2,6 +2,7 @@
   "name": "vuecommerce",
   "version": "0.2.0",
   "private": true,
+  "author": "Talon Smart",
   "scripts": {
     "serve": "vue-cli-service serve",
     "start": "nodemon server.js",
